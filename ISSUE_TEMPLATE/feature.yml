@@ -1,0 +1,49 @@
+name: Feature Request
+description: Suggest an improvement or new feature for C-Tech-Labs projects.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please describe the feature you're requesting.**
+  - type: checkboxes
+    id: search
+    attributes:
+      label: Have you searched for similar features?
+      description: Please search existing issues and discussions to avoid duplicates.
+      options:
+        - label: I have searched existing issues and discussions.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the proposed feature.
+      placeholder: Tell us what the feature should do.
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case
+      description: What problem does this feature solve? Why is it needed?
+      placeholder: Provide context and any relevant details.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Suggest an implementation approach if you have one.
+      placeholder: How would you like to implement this feature?
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you've considered.
+      placeholder: Other options you considered.
+    validations:
+      required: false
