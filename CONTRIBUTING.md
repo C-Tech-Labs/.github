@@ -1,35 +1,51 @@
 # Contributing to C-Tech-Labs
 
-Thank you for considering contributing to C-Tech-Labs! We welcome pull requests, issues and feedback to improve our projects and processes.
+Thank you for investing time to improve C-Tech-Labs projects. This guide outlines expectations for quality, security, and collaboration so we can ship dependable software together.
 
-## How to contribute
+## Getting started
+- Fork the repository and clone it locally.
+- Install project prerequisites (language runtimes, package managers, linters) as documented in the project README.
+- Create a focused branch from `main`, e.g., `feat/<short-description>` or `fix/<issue-id>`.
 
-1. **Fork the repository** and clone it locally.
-2. **Create a branch** for your feature or fix: `git checkout -b feat/your-feature` or `fix/your-bug`.
-3. **Make your changes** following our coding standards. Keep commits small and focused.
-4. **Add tests** if applicable and ensure existing tests pass.
-5. **Update documentation** if your changes impact usage.
-6. **Push your branch** to GitHub and open a **pull request** against the `main` branch.
-7. **Fill out the pull request template** fully, including a summary of your changes, testing steps, screenshots if relevant, risks, and rollback plan.
-8. **Address review feedback** promptly. We value respectful and collaborative discussion.
+## Development workflow
+1. **Design first:** For non-trivial changes, open an issue or draft PR describing the problem, scope, and approach. Include success metrics and rollback considerations.
+2. **Small, atomic commits:** Use [Conventional Commits](https://www.conventionalcommits.org/) for clarity (e.g., `feat: add audit logging`). Each commit should pass tests.
+3. **Testing and quality:**
+   - Run unit, integration, and lint checks relevant to the stack.
+   - Add or update tests to cover new behavior and regression cases.
+   - Keep coverage steady or improving; highlight any intentional gaps.
+4. **Security:**
+   - Prefer least-privilege defaults and secure-by-default configs.
+   - Avoid introducing secrets into code or history; use secret scanners if available.
+   - Document threat considerations and mitigations for sensitive changes.
+5. **Documentation:** Update README, changelogs, and inline docs so future contributors understand intent and usage.
 
-## Reporting issues
-
-If you find a bug or have a feature request, please [open an issue](../../issues/new/choose) and provide the following information:
-
-- **Summary:** A clear and concise description.
-- **Expected behavior:** What you expected to happen.
-- **Actual behavior:** What actually happened.
-- **Steps to reproduce:** A minimal set of steps to trigger the issue.
-- **Environment:** OS, tool versions, and any relevant context.
-- **Logs/screenshots:** Attach logs or screenshots if helpful.
-
-Before opening an issue, please search existing issues to avoid duplicates.
+## Pull requests
+- Link related issues in the PR description (`Fixes #123`).
+- Provide a concise summary, testing evidence (commands, screenshots), and a rollback plan in the template.
+- Mark the PR as **Draft** until all required checks pass.
+- Request reviews from relevant owners; pair on risky changes when possible.
+- Address feedback promptly; follow up with additional tests if fixes are made.
 
 ## Code style
+- Honor linters and formatters configured for the repository.
+- Prefer clear, maintainable solutions over cleverness; optimize only with data.
+- Keep functions cohesive and small; document non-obvious behavior and edge cases.
 
-We follow conventional formatting and linting standards appropriate to each language. Use `pre-commit` hooks or the provided lint tasks in the CI pipeline to ensure consistent style.
+## Release management
+- Follow semantic versioning where applicable.
+- Include migration guides and operational notes for changes that impact deployments.
+- Backport fixes to supported release lines when required; coordinate with the release manager.
+
+## Reporting issues
+If you find a bug or have a feature request, please [open an issue](../../issues/new/choose) and provide:
+
+- **Summary:** What is happening and why it matters.
+- **Expected vs. actual behavior** with screenshots or logs when possible.
+- **Steps to reproduce:** Minimal, reliable reproduction steps.
+- **Environment:** OS, runtime versions, and configuration that might be relevant.
+
+Before opening a new issue, search existing issues and discussions to avoid duplicates.
 
 ## Licensing
-
-By contributing, you agree that your contributions will be licensed under the MIT license unless otherwise stated.
+By contributing, you agree your contributions are licensed under the MIT license unless otherwise noted.

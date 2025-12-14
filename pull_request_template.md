@@ -1,23 +1,24 @@
 # Pull Request Template
 
 ## Summary
-<!-- Provide a brief description of the changes you are proposing -->
+<!-- Provide a brief description of the changes, user impact, and why the change is needed. Include screenshots for UI changes. -->
 
 ## Testing
-<!-- Describe how you tested your changes. List steps and commands run. -->
+<!-- List commands and scenarios executed to validate this change. Example: `npm test`, `pytest`, manual flows. -->
+- 
 
-## Screenshots
-<!-- If applicable, add screenshots to help explain your changes. -->
+## Risk & Mitigation
+<!-- Identify risks (breaking changes, migrations, performance, security). Describe mitigations and fallback plans. -->
 
-## Risk
-<!-- Identify any areas of risk or breaking changes introduced by this PR. -->
+## Deployment / Rollback
+<!-- Outline deployment steps, configuration changes, and how to roll back safely if needed. -->
 
-## Rollback
-<!-- Provide a rollback plan in case things go wrong. -->
+## Dependencies
+<!-- List new dependencies or services introduced, including justification and security considerations. -->
 
 ## Checklist
-- [ ] I have linked this PR to the appropriate issue
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] I have updated documentation where necessary
-- [ ] I have run any relevant pipeline tasks (linting, formatting, unit tests)
-- [ ] I have reviewed my code and consider it production ready
+- [ ] Issue linked (e.g., Fixes #123) or rationale provided
+- [ ] Tests added/updated and passing locally
+- [ ] Documentation updated (README, docs, changelog as applicable)
+- [ ] Security/privacy implications reviewed
+- [ ] Changes reviewed with relevant stakeholders or code owners
