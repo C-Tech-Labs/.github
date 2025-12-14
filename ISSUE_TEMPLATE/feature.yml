@@ -1,49 +1,58 @@
 name: Feature Request
 description: Suggest an improvement or new feature for C-Tech-Labs projects.
-title: "[Feature]: "
+title: "[FEATURE] <title>"
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        **Please describe the feature you're requesting.**
+        Please focus on the user problem first. Well-scoped requests are easier to schedule and deliver.
   - type: checkboxes
     id: search
     attributes:
-      label: Have you searched for similar features?
-      description: Please search existing issues and discussions to avoid duplicates.
+      label: Pre-flight checks
       options:
-        - label: I have searched existing issues and discussions.
+        - label: I have searched existing issues and discussions for similar requests.
           required: true
   - type: textarea
-    id: description
+    id: problem
     attributes:
-      label: Feature Description
-      description: A clear and concise description of the proposed feature.
-      placeholder: Tell us what the feature should do.
+      label: Problem statement
+      description: What user need or pain point are you trying to solve?
     validations:
       required: true
   - type: textarea
-    id: use_case
+    id: goal
     attributes:
-      label: Use Case
-      description: What problem does this feature solve? Why is it needed?
-      placeholder: Provide context and any relevant details.
+      label: Goals and non-goals
+      description: Define what success looks like and what is explicitly out of scope.
     validations:
       required: true
   - type: textarea
-    id: solution
+    id: proposal
     attributes:
-      label: Proposed Solution
-      description: Suggest an implementation approach if you have one.
-      placeholder: How would you like to implement this feature?
+      label: Proposed solution
+      description: Describe the change you would like to see. Include APIs, UX flows, or configuration as relevant.
     validations:
-      required: false
+      required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives Considered
-      description: Describe any alternative solutions or features you've considered.
-      placeholder: Other options you considered.
+      label: Alternatives considered
+      description: Other approaches you explored and why they were not chosen.
+    validations:
+      required: false
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and urgency
+      description: Who benefits from this feature? Is there a deadline or release dependency?
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List measurable outcomes or testable scenarios that define completion.
     validations:
       required: false

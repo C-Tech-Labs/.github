@@ -8,20 +8,48 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to fill out this bug report.
+        Thank you for taking the time to fill out this bug report. Please provide as much detail as possible so we can triage quickly.
   - type: checkboxes
     id: search
     attributes:
-      label: Checks
-      description: Please confirm you have searched
+      label: Pre-flight checks
+      description: Please confirm you have completed the following.
       options:
-        - label: I searched existing issues and did not find duplicates
+        - label: I searched existing issues and discussions and did not find duplicates
+          required: true
+        - label: I am not reporting a security vulnerability (see SECURITY.md for confidential reporting)
           required: true
   - type: input
     id: environment
     attributes:
       label: Environment
-      description: Describe your environment (OS, versions, etc.)
+      description: Describe your environment (OS, runtime versions, package manager, deployment details).
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide the version number, tag, or commit SHA you are using.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this issue?
+      options:
+        - critical (production outage or data loss)
+        - high (major degradation, no workaround)
+        - medium (workaround exists)
+        - low (minor issue)
+    validations:
+      required: true
+  - type: input
+    id: component
+    attributes:
+      label: Impacted area
+      description: Service, package, or component affected (e.g., API, UI, deployment, docs).
     validations:
       required: true
   - type: textarea
@@ -42,25 +70,31 @@ body:
     id: steps
     attributes:
       label: Steps to reproduce
-      description: Steps to reproduce the problem.
+      description: Provide a minimal, reliable set of steps to reproduce the issue.
+      placeholder: |
+        1. Go to '...'
+        2. Run '...'
+        3. Observe '...'
     validations:
       required: true
   - type: textarea
     id: logs
     attributes:
       label: Logs / Screenshots
-      description: Please attach relevant logs or screenshots.
+      description: Attach relevant logs, stack traces, or screenshots. Please sanitize sensitive data.
     validations:
       required: false
-  - type: dropdown
-    id: severity
+  - type: textarea
+    id: regression
     attributes:
-      label: Severity
-      description: How severe is this bug?
-      options:
-        - low
-        - medium
-        - high
-        - critical
+      label: Regression information
+      description: Did this work previously? If so, what changed?
     validations:
-      required: true
+      required: false
+  - type: textarea
+    id: impact
+    attributes:
+      label: Business impact
+      description: Describe user impact, deadlines, or releases blocked by this issue.
+    validations:
+      required: false
